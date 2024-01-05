@@ -202,7 +202,13 @@ const handlePlayAgainClick = async () => {
           <button className="mr-5 mt-10 py-2 px-6 bg-black-300 text-xl hover:text-white hover:bg-yellow-600 text-yellow-400 uppercase font-bold font-sans rounded-lg" onClick={handleStart}>Start Game</button>
           </div>
         ) : (
-          <p>Loading...</p>
+          <div id='start' className='h-screen flex justify-center items-center flex-col bg-cover'>
+            <div className="p-8 text-center bg-black flex flex-col justify-center items-center w-[80%] md:w-[50%] bg-opacity-35 rounded-md">
+              <p className='font-bold font-sans text-md text-white'>🃏 BlackJack is waiting 🃏</p>
+              <h1 className="font-bold text-3xl font-sans text-white mt-10">Loading...</h1>
+            </div>
+          <button className="mr-5 mt-10 py-2 px-6 bg-black-300 text-xl hover:text-white hover:bg-yellow-600 text-yellow-400 uppercase font-bold font-sans rounded-lg" onClick={handleStart}>Start Game</button>
+          </div>
         )
       )}
     </>
