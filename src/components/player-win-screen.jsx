@@ -10,7 +10,7 @@ const PlayerWonScreen = ({isBlackJack, onPlayAgain}) => {
         <>
         {isBlackJack ? ( 
             <div id="main" className="container h-screen xl:max-w-full flex flex-col justify-center items-center bg-cover">
-            <div className="p-8 bg-black flex flex-col justify-center items-center bg-opacity-35 rounded-md">
+            <div className="p-8 bg-black text-center flex flex-col justify-center items-center bg-opacity-35 rounded-md">
                 <h1 className="font-bold text-3xl font-sans text-white mb-10">🃏 Congratulations: You have won by BlackJack! 🃏</h1>
                 <p className="font-bold font-sans text-md text-white">Good job, you have won this round!</p>
                 <p className="font-sans text-md text-white">Test your luck again. Ready to try again?</p>
@@ -19,7 +19,7 @@ const PlayerWonScreen = ({isBlackJack, onPlayAgain}) => {
         </div> 
         ) : ( 
             <div id="main" className="container h-screen xl:max-w-full flex flex-col justify-center items-center bg-cover">
-                <div className="p-8 bg-black flex flex-col justify-center items-center bg-opacity-35 rounded-md">
+                <div className="p-8 bg-black text-center flex flex-col justify-center items-center bg-opacity-35 rounded-md">
                     <h1 className="font-bold text-3xl font-sans text-white mb-10">🃏 Congratulations: You Win! 🃏</h1>
                     <p className="font-bold font-sans text-md text-white">Good job, you have won this round!</p>
                     <p className="font-sans text-md text-white">Test your luck again. Ready to try again?</p>

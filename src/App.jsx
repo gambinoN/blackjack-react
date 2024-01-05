@@ -78,10 +78,7 @@ function App() {
   //useEffect hook running when player is standing to check who won the game
 
   const checkGameOutcome = () => {
-    if (playerValue === 21) {
-      setIsBlackJack(true);
-      setPlayerWin(true);
-    } else if (playerValue > 21) {
+     if (playerValue > 21) {
       setPlayerLost(true);
     } else if (dealerValue === 21) {
       setIsDealersBlackJack(true);
@@ -93,6 +90,9 @@ function App() {
         setPlayerLost(true);
       } else if (dealerValue === playerValue) {
         setPlayerLost(true);
+      } else if (playerValue === 21) {
+        setIsBlackJack(true);
+        setPlayerWin(true);
       } else {
         setPlayerWin(true);
       }
@@ -186,14 +186,16 @@ const handlePlayAgainClick = async () => {
       ) : playerWin ? (
         <PlayerWonScreen onPlayAgain={handlePlayAgainClick} isBlackJack={isBlackJack} />
       ) : initialCards && isPlaying ? (
-        <div id="main" className="container flex xl:max-w-full justify-center items-center flex-col bg-cover h-screen">
-          <Card handleStand={handleStand} handleHit={handleHit} isStanding={isStanding} playerCards={playerCards} value={playerValue}/>
-          <DealerCards isStanding={isStanding} playerValue={playerValue} drawCard={drawCard} isPlaying={isPlaying} deckId={deckId} sendDealerValueToParent={handleReceivedDealerValue}/>
+        <div id="main" className="container flex xl:max-w-full md:justify-center items-center flex-col bg-cover h-screen">
+          <div className='flex flex-col items-center justify-center h-full'>
+            <Card handleStand={handleStand} handleHit={handleHit} isStanding={isStanding} playerCards={playerCards} value={playerValue}/>
+            <DealerCards isStanding={isStanding} playerValue={playerValue} drawCard={drawCard} isPlaying={isPlaying} deckId={deckId} sendDealerValueToParent={handleReceivedDealerValue}/>
+          </div>
         </div> 
         ) : (
         initialCards ? (
           <div id='start' className='h-screen flex justify-center items-center flex-col bg-cover'>
-            <div className="p-8 bg-black flex flex-col justify-center items-center bg-opacity-35 rounded-md">
+            <div className="p-8 text-center bg-black flex flex-col justify-center items-center w-[80%] md:w-[50%] bg-opacity-35 rounded-md">
               <p className='font-bold font-sans text-md text-white'>🃏 Are you ready to test out your luck? 🃏</p>
               <h1 className="font-bold text-3xl font-sans text-white mt-10">PLAY THE GAME OF BLACKJACK</h1>
             </div>

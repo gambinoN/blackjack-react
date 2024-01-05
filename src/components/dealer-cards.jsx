@@ -84,24 +84,24 @@ const DealerCards = ({isPlaying, deckId, sendDealerValueToParent, isStanding, dr
     return ( 
     <>
     {isPlaying && !isStanding && !drawCard && dealerCards.length > 0 ? (
-        <div className="flex items-center">
-        <div className="pt-4 ">
+        <div className="flex items-center flex-col md:flex-row mt-10 max-h-[40%]">
+        <div className="md:mr-20 fixed md:static">
             <h1 className="font-bold text-white font-sans text-lg">Dealer:</h1>
         </div>
-            <div className="scale-[60%] flex flex-row" >
-                <img className="mr-4" src={dealerCards[0].image} alt="" />
-                <img className="mr-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="" />
+            <div className="py-20 flex flex-row" >
+                <img className="w-[100px] aspect-auto mr-4" src={dealerCards[0].image} alt="" />
+                <img className="w-[100px] aspect-auto mr-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="" />
             </div>
       
       </div>
       ) : isStanding ? (
-        <div className="flex items-center">
-          <div className="p-4">
+        <div className="flex items-center flex-col md:flex-row mt-10">
+          <div className="md:mr-20 fixed md:static">
             <h1 className="font-bold text-white font-sans text-lg">Dealer: {value}</h1>
           </div>
-          <div className="scale-[60%] flex flex-row" >
+          <div className="flex flex-row flex-wrap justify-center py-20">
             {dealerCards.map((card, index) => (
-              <img className="mr-4" src={card.image} key={index} alt="" />
+              <img className="w-[100px] aspect-auto mr-4 mb-4" src={card.image} key={index} alt="" />
             ))}
           </div>
         </div>
